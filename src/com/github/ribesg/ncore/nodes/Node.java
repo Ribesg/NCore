@@ -1,4 +1,4 @@
-package com.github.ribesg.nodes;
+package com.github.ribesg.ncore.nodes;
 
 import com.github.ribesg.ncore.NCore;
 
