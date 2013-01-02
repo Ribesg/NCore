@@ -1,6 +1,5 @@
 package com.github.ribesg.ncore.nodes.cuboid.beans;
 
-
 public enum Flag {
     BOOSTER,
     BUILD,
@@ -22,6 +21,7 @@ public enum Flag {
     MOB,
     PASS,
     PERMANENT,
+    PICKUP,
     PVP,
     SNOW,
     TELEPORT,

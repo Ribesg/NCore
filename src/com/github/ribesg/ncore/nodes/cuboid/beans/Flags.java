@@ -41,6 +41,7 @@ public class Flags {
         defaultFlagMap.put(Flag.MOB, false);
         defaultFlagMap.put(Flag.PASS, false);
         defaultFlagMap.put(Flag.PERMANENT, false);
+        defaultFlagMap.put(Flag.PICKUP, false);
         defaultFlagMap.put(Flag.PVP, true);
         defaultFlagMap.put(Flag.SNOW, false);
         defaultFlagMap.put(Flag.TELEPORT, false);

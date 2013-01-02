@@ -13,7 +13,7 @@ public enum FlagAtt {
     FEED_MAX_FOOD,
 
     // Location
-    PASS_POINT,
+    WARP_POINT,
     CLOSED_POINT,
 
     // Vector
