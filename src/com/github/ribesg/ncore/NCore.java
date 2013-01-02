@@ -19,7 +19,7 @@ public class NCore extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Nothing yet
+        // Nothing yet 
     }
 
     @Override
