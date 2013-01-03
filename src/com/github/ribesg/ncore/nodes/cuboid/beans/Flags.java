@@ -9,11 +9,11 @@ public class Flags {
         flags = Flags.getDefaultFlagMap();
     }
 
-    public boolean get(final Flag f) {
+    public boolean getFlag(final Flag f) {
         return flags.get(f);
     }
 
-    public void set(final Flag f, final boolean b) {
+    public void setFlag(final Flag f, final boolean b) {
         flags.put(f, b);
     }
 

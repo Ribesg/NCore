@@ -18,7 +18,7 @@ public class FlagAttributes {
     }
 
     // Integers handling
-    public Integer getInt(final FlagAtt f) {
+    public Integer getIntFlagAtt(final FlagAtt f) {
         if (atts == null) {
             return null;
         } else if (isIntFlagAtt(f)) {
@@ -29,19 +29,19 @@ public class FlagAttributes {
         }
     }
 
-    public void setInt(final FlagAtt f, final Integer i) {
+    public void setIntFlagAtt(final FlagAtt f, final Integer i) {
         if (atts == null) {
             newMap();
         }
         if (isIntFlagAtt(f)) {
             atts.put(f, i);
-            checkIntCorrection();
+            checkIntFlagAttCorrection();
         } else {
             new IllegalArgumentException(f.name()).printStackTrace();
         }
     }
 
-    public void setIntNoCheck(final FlagAtt f, final Integer i) {
+    private void setIntFlagAttNoCheck(final FlagAtt f, final Integer i) {
         atts.put(f, i);
     }
 
@@ -61,34 +61,34 @@ public class FlagAttributes {
         }
     }
 
-    private void checkIntCorrection() {
-        if (getInt(FlagAtt.HEAL_TIMER) < 5) {
-            setIntNoCheck(FlagAtt.HEAL_TIMER, 5);
+    private void checkIntFlagAttCorrection() {
+        if (getIntFlagAtt(FlagAtt.HEAL_TIMER) < 5) {
+            setIntFlagAttNoCheck(FlagAtt.HEAL_TIMER, 5);
         }
-        if (getInt(FlagAtt.FEED_TIMER) < 5) {
-            setIntNoCheck(FlagAtt.FEED_TIMER, 5);
+        if (getIntFlagAtt(FlagAtt.FEED_TIMER) < 5) {
+            setIntFlagAttNoCheck(FlagAtt.FEED_TIMER, 5);
         }
-        if (getInt(FlagAtt.HEAL_AMOUNT) < -20) {
-            setIntNoCheck(FlagAtt.HEAL_AMOUNT, -20);
-        } else if (getInt(FlagAtt.HEAL_AMOUNT) > 20) {
-            setIntNoCheck(FlagAtt.HEAL_AMOUNT, 20);
+        if (getIntFlagAtt(FlagAtt.HEAL_AMOUNT) < -20) {
+            setIntFlagAttNoCheck(FlagAtt.HEAL_AMOUNT, -20);
+        } else if (getIntFlagAtt(FlagAtt.HEAL_AMOUNT) > 20) {
+            setIntFlagAttNoCheck(FlagAtt.HEAL_AMOUNT, 20);
         }
-        if (getInt(FlagAtt.FEED_AMOUNT) < -20) {
-            setIntNoCheck(FlagAtt.FEED_AMOUNT, -20);
-        } else if (getInt(FlagAtt.FEED_AMOUNT) > 20) {
-            setIntNoCheck(FlagAtt.FEED_AMOUNT, 20);
+        if (getIntFlagAtt(FlagAtt.FEED_AMOUNT) < -20) {
+            setIntFlagAttNoCheck(FlagAtt.FEED_AMOUNT, -20);
+        } else if (getIntFlagAtt(FlagAtt.FEED_AMOUNT) > 20) {
+            setIntFlagAttNoCheck(FlagAtt.FEED_AMOUNT, 20);
         }
         for (final FlagAtt f : new FlagAtt[] { FlagAtt.HEAL_MIN_HEALTH, FlagAtt.HEAL_MAX_HEALTH, FlagAtt.FEED_MIN_FOOD, FlagAtt.FEED_MAX_FOOD }) {
-            if (getInt(f) < 0) {
-                setIntNoCheck(f, 0);
-            } else if (getInt(f) > 20) {
-                setIntNoCheck(f, 20);
+            if (getIntFlagAtt(f) < 0) {
+                setIntFlagAttNoCheck(f, 0);
+            } else if (getIntFlagAtt(f) > 20) {
+                setIntFlagAttNoCheck(f, 20);
             }
         }
     }
 
     // Locations handling
-    public Location getLoc(final FlagAtt f) {
+    public Location getLocFlagAtt(final FlagAtt f) {
         if (atts == null) {
             return null;
         } else if (isLocFlagAtt(f)) {
@@ -99,13 +99,13 @@ public class FlagAttributes {
         }
     }
 
-    public void setLoc(final FlagAtt f, final Location loc) {
+    public void setLocFlagAtt(final FlagAtt f, final Location loc) {
         if (atts == null) {
             newMap();
         }
         if (isLocFlagAtt(f)) {
             atts.put(f, loc);
-            checkLocCorrection();
+            checkLocFlagAttCorrection();
         } else {
             new IllegalArgumentException(f.name()).printStackTrace();
         }
@@ -121,12 +121,12 @@ public class FlagAttributes {
         }
     }
 
-    private void checkLocCorrection() {
+    private void checkLocFlagAttCorrection() {
         // Nothing to do yet
     }
 
     // Vectors handling
-    public Vector getVect(final FlagAtt f) {
+    public Vector getVectFlagAtt(final FlagAtt f) {
         if (atts == null) {
             return null;
         } else if (isVectFlagAtt(f)) {
@@ -137,13 +137,13 @@ public class FlagAttributes {
         }
     }
 
-    public void setVect(final FlagAtt f, final Vector v) {
+    public void setVectFlagAtt(final FlagAtt f, final Vector v) {
         if (atts == null) {
             newMap();
         }
         if (isVectFlagAtt(f)) {
             atts.put(f, v);
-            checkVectorCorrection();
+            checkVectFlagAttCorrection();
         } else {
             new IllegalArgumentException(f.name()).printStackTrace();
         }
@@ -158,10 +158,10 @@ public class FlagAttributes {
         }
     }
 
-    private void checkVectorCorrection() {
-        if (getVect(FlagAtt.BOOSTER_VECTOR).lengthSquared() > 100) {
+    private void checkVectFlagAttCorrection() {
+        if (getVectFlagAtt(FlagAtt.BOOSTER_VECTOR).lengthSquared() > 100) {
             // Bukkit does not allow > 10 m/s Velocity
-            setVect(FlagAtt.BOOSTER_VECTOR, getVect(FlagAtt.BOOSTER_VECTOR).normalize().multiply(10));
+            setVectFlagAtt(FlagAtt.BOOSTER_VECTOR, getVectFlagAtt(FlagAtt.BOOSTER_VECTOR).normalize().multiply(10));
         }
     }
 
