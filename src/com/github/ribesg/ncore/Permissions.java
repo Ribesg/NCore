@@ -26,4 +26,6 @@ public interface Permissions {
     public static final String FLAG_USE             = "ncuboid.flag.use";
     public static final String FLAG_WARPGATE        = "ncuboid.flag.warpgate";
     public static final String SEE_INVISIBLE_CUBOID = "ncuboid.seeinvisible";
+    public static final String CMD_GENERAL          = "ncuboid.cmd.cuboid";
+    public static final String CMD_RELOAD_MESSAGES  = "ncuboid.cmd.reload.messages";
 }
